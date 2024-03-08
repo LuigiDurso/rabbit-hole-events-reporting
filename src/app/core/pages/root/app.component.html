@@ -1,1 +1,15 @@
-<router-outlet></router-outlet>
+<div class="text-gray-900 bg-gray-100 font-body flex flex-col min-h-screen h-full justify-between">
+    <div>
+        @if ( (( menuItems | async ) || []); as resolvedMenuItems ) {
+            <rabbit-hole-events-reporting-hamburger-menu
+                    [menuItems]="resolvedMenuItems"
+                    (menuItemSelected)="onMenuItemSelected($event)"></rabbit-hole-events-reporting-hamburger-menu>
+        }
+    </div>
+    <main>
+        <router-outlet />
+    </main>
+    <div class="pt-10">
+        <rabbit-hole-events-reporting-footer />
+    </div>
+</div>

@@ -1,5 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@300;600&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* You can add global styles to this file, and also import other style files */
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.item {
+  cursor: pointer;
+}
+
+.h-screen-50 {
+  height: 50vh;
+}
+
+.h-screen-75 {
+  height: 75vh;
+}
+
+.h-screen-25 {
+  height: 25vh;
+}
+
+.rounded-b-3xl{
+  border-bottom-right-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+}
+
+.text-hero {
+  font-size: 6rem;
+}
+
+.font-body{
+  font-family: Nunito, serif;
+}
