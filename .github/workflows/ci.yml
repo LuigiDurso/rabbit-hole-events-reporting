@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20.z]
+        node-version: [20.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -26,6 +26,15 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+    - name: Install dependencies
+      run: npm ci
+    - name: Build
+      run: npx nx run rabbit-hole-events-reporting:build:production --baseHref=/rabbit-hole-events-reporting/
+
+    - name: Deploy to GitHub Pages
+      uses: crazy-max/ghaction-github-pages@v3
+      with:
+        target_branch: gh-pages
+        build_dir: dist/rabbit-hole-events-reporting/browser/
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
