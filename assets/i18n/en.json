@@ -1,0 +1,28 @@
+{
+  "component": {
+    "confirm-message": {
+      "confirm": "Confirm",
+      "cancel": "Cancel"
+    },
+    "menu": {
+      "events": "Events"
+    },
+    "hamburger-menu": {
+      "hamburger-icon-rs": "Open menu"
+    },
+    "footer": {
+      "site": "Site",
+      "author": "Author"
+    }
+  },
+  "page": {
+    "full-page-message": {
+      "404": {
+        "error": "404 Error",
+        "title": "Page not found",
+        "description": "Sorry, the page you are looking for does not exist! Here are some useful links:"
+      },
+      "home": "Home"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "component": {
+    "confirm-message": {
+      "confirm": "Conferma",
+      "cancel": "Annulla"
+    },
+    "menu": {
+      "events": "Events"
+    },
+    "hamburger-menu": {
+      "hamburger-icon-rs": "Apri menu"
+    },
+    "footer": {
+      "site": "Sito",
+      "author": "Autore"
+    }
+  },
+  "page": {
+    "full-page-message": {
+      "404": {
+        "error": "Errore 404",
+        "title": "Pagina non trovata",
+        "description": "Mi dispiace, la pagina che cerchi non esiste! Di seguito qualche link utile:"
+      },
+      "home": "Pagina principale"
+    }
+  }
+}
