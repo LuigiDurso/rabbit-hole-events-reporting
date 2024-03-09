@@ -1,8 +1,11 @@
 import { Route } from '@angular/router';
+import { eventsRoutes } from "../../events/route/events.routes";
 
 export const appRoutes: Route[] = [
     {
         path: '',
-        loadChildren: () => import('../../events/route/events.routes').then(mod => mod.eventsRoutes),
-    }
+        redirectTo: 'events',
+        pathMatch: 'full'
+    },
+    ...eventsRoutes
 ];

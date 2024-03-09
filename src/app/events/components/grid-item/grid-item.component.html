@@ -1,0 +1,21 @@
+<div tabindex="0" aria-label="card 1" class="focus:outline-none bg-white dark:bg-gray-800  p-6 shadow rounded">
+        <div class="flex items-center border-b border-gray-200 dark:border-gray-700  pb-6">
+        <img [ngSrc]="item().imageUrl" width="50" height="50"
+             alt="coin avatar" class="w-12 h-12 rounded-full"/>
+        <div class="flex items-start justify-between w-full">
+            <div class="pl-3 w-full">
+                <p tabindex="0" class="focus:outline-none text-xl font-medium leading-5 text-gray-800 dark:text-white ">
+                    {{ item().name }}
+                </p>
+                <p tabindex="0" class="focus:outline-none text-sm leading-normal pt-2 text-gray-500 dark:text-gray-200 ">
+                    {{ item().date }}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="px-2">
+        <p tabindex="0" class="focus:outline-none text-sm leading-5 py-4 text-gray-600 dark:text-gray-200 ">
+            {{ item().description }}
+        </p>
+    </div>
+</div>

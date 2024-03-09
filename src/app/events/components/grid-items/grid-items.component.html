@@ -1,0 +1,16 @@
+<div aria-label="group of cards" tabindex="0" class="focus:outline-none py-8 w-full">
+    @for (item of items(); track item.name; let idx = $index; let even = $even) {
+        @if (even) {
+            <div class="lg:flex items-center justify-center w-full {{ idx > 0 ? 'mt-7' : '' }}">
+                <div class="lg:w-4/12 lg:mr-7 lg:mb-0 mb-7">
+                    <rabbit-hole-events-reporting-grid-item [item]="item" />
+                </div>
+                @if (items[idx + 1]) {
+                    <div class="lg:w-4/12 lg:mr-7 lg:mb-0 mb-7">
+                        <rabbit-hole-events-reporting-grid-item [item]="items[idx + 1]" />
+                    </div>
+                }
+            </div>
+        }
+    }
+</div>
