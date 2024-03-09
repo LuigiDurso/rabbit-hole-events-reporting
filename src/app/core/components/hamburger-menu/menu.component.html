@@ -1,17 +1,24 @@
-<nav class="relative px-4 py-1 flex justify-between items-center bg-white">
+<nav class="relative px-4 py-1 flex justify-between items-center">
     <div>
         <img ngSrc="assets/images/rabbit-assoc-logo.png" alt="LogoRabbitAssoc" width="100" height="100">
     </div>
-    <div>
-        <ul class="hidden lg:block mr-10 mb-10 text-white" id="menu">
-            <li class="my-3" *ngFor="let menuItem of menuItems">
-                <a class="rounded-lg py-2 px-3 text-md tracking-wider font-bold bg-primary block" href=""
-                   (click)="selectMenuItem(menuItem, false, $event)">
-                    <!--        <i class="{{ menuItem.icon }} mr-2"></i>-->
-                    <span>{{ 'component.menu.' + menuItem!.name | translate }}</span>
-                </a>
-            </li>
-        </ul>
+    <div class="hidden mr-10 text-black w-full h-0 lg:w-fit flex-wrap justify-end items-center space-y-8 lg:space-y-0 lg:flex lg:h-fit md:flex-nowrap">
+        @for (menuItem of menuItems; track menuItem.name; let idx = $index) {
+            <a class="block md:px-4 transition hover:text-gray-600 dark:hover:text-gray-400" href=""
+               (click)="selectMenuItem(menuItem, false, $event)">
+                <span>{{ 'component.menu.' + menuItem!.name | translate }}</span>
+            </a>
+            @if ( menuItems.length - 1 !== idx ) {
+                <div class="flex text-gray-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                         stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0
+                               110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                    </svg>
+                </div>
+            }
+        }
     </div>
     <div class="px-4 cursor-pointer lg:hidden">
         <nav>
@@ -57,3 +64,4 @@
         </nav>
     </section>
 </nav>
+<hr class="my-1 border-blue-gray-50" />
